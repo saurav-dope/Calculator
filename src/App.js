@@ -25,7 +25,7 @@ function reducer(state, { type, payload }) {
         return state;
       }
 
-      if (payload.digit === '.' && state.currentOperand.includes('.')) {
+      if (payload?.digit === '.' && state?.currentOperand?.includes('.')) {
         return state;
       }
 
@@ -147,7 +147,7 @@ function formatOperand(operand) {
 export default function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
     reducer,
-    {}
+    { currentOperand: null, previousOperand: null, operation: null }
   );
 
   return (
